@@ -1,0 +1,20 @@
+A - constant (either first integral bound or second x coordinate)
+B - constant (either second integral bound or second y coordinate)
+C - counting variable in NM
+  - (b-a/2n) constant for traps
+  - continuous flag for IVT/MVT/Rolles
+D - decimal places
+E - use previous equation flag
+G - constant for Intermediate Value Theorem
+I - index var for for loops
+L - temp variable
+M - min/max temp variable
+N - number of x (ex. rects for RmS)
+R - result
+  - exit of program
+S - starting label
+T - temp variable
+W - width for RmS
+X - x coordinate
+  - recursive x in NM
+Y - y coordinate
