@@ -9,7 +9,7 @@ G - constant for Intermediate Value Theorem
 I - index var for for loops
 L - temp variable
 M - min/max temp variable
-N - number of x (ex. rects for RmS)
+N - number of x (ex. rects for RmS/traps for Traps)
 R - result
   - exit of program
 S - starting label
