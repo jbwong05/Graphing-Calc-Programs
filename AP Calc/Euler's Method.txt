@@ -28,7 +28,7 @@ If J=3
 Then
 Goto 3
 Lbl 4
-
+expr(Str2->L3(I)
 Else
 If J=4
 Then
@@ -41,7 +41,8 @@ End
 End
 
 End
-
+Disp "Answers Stored in L1-L4"
+Disp "Cols: X,Y,dy/dx,dy"
 prgmRESETVAR
 
 Lbl 3
