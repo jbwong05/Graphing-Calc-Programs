@@ -18,3 +18,8 @@ W - width for RmS
 X - x coordinate
   - recursive x in NM
 Y - y coordinate
+
+Str1 - main equation/string
+Str2 - holds converted number after NUM2STR
+Str3 - holds string to be modified by REPLACE
+Str4 - holds string being replaced by REPLACE
