@@ -1,9 +1,9 @@
 prgmRESETVAR
 Input "dy/dx:",Str1
-Input "Given X Val:",A
-Input "Given Y Val:",B
+Input "Initial X Val:",A
+Input "Initial Y Val:",B
 Input "dx:",C
-Input "Solve y(?):",X
+Input "Final X Val:",X
 Menu("Specified Decimal Places?","Yes",1,"No",2
 Lbl 1
 Input "Decimal Places:",D
