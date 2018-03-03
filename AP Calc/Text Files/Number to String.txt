@@ -1,0 +1,10 @@
+ClrList L₅
+ClrList L₆
+{0,1→L₅
+GL₅→L₆
+LinReg(ax+b) L₅,L₆,Y₀
+EquString(Y₀,Str2
+sub(Str2,1,length(Str2)-3)→Str2
+DelVar Y₀
+ClrList L₅
+ClrList L₆

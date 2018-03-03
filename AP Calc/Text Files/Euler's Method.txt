@@ -1,0 +1,77 @@
+prgmRESETVAR
+Input "dy/dx:",Str1
+Input "Initial X Val:",A
+Input "Initial Y Val:",B
+Input "dx:",C
+Input "Final X Val:",X
+Menu("Specified Decimal Places?","Yes",1,"No",2
+Lbl 1
+Input "Decimal Places:",D
+D+1→D
+Lbl 2
+Disp "Warning L1-L6 will be"
+Disp "overwritten"
+Pause "Press Enter to Cont."
+ClrAllLists
+For(I,1,((X-A)/C)+1,1
+For(J,1,4,1
+If J=1
+Then
+If D>0
+Then
+round(A+((C*I)-C),D)→L₁(I)
+Else
+A+((C*I)-C)→L₁(I)
+End
+Else
+If J=2
+Then
+If I-1>0
+Then
+If D>0
+Then
+round(L₂(I-1)+L₄(I-1),D)→L₂(I)
+Else
+L₂(I-1)+L₄(I-1)→L₂(I)
+End
+Else
+B→L₂(I)
+End
+Else
+If J=3
+Then
+Str1→Str3
+L₁(I)→G
+prgmNUM2STR
+"X"→Str4
+prgmREPLACE
+L₂(I)→G
+prgmNUM2STR
+"Y"→Str4
+prgmREPLACE
+If D>0
+Then
+round(expr(Str3),D)→L₃(I)
+Else
+expr(Str3→L₃(I)
+End
+Else
+If J=4
+Then
+If D>0
+Then
+round(L₃(I)*C,D)→L₄(I)
+Else
+L₃(I)*C→L₄(I)
+End
+End
+End
+End
+End
+
+End
+
+End
+Disp "Answers Stored in L1-L4"
+Disp "Cols: X,Y,dy/dx,dy"
+prgmRESETVAR

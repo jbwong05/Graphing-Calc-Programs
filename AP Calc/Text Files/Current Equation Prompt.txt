@@ -1,0 +1,9 @@
+Menu("Use Current Y9?","Yes",1,"No",2
+Lbl 1
+Return
+Lbl 2
+Input "Equation:",Str1
+Str1→Y₉
+FnOff 9
+DelVar Str1
+Return

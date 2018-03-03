@@ -1,0 +1,15 @@
+While inString(Str3,Str4,1)>0
+inString(Str3,Str4,1)→T
+If T=1
+Then
+"("+Str2+")"+sub(Str3,inString(Str3,Str4,1)+1,length(Str3)-inString(Str3,Str4,1))→Str3
+Else
+If T=length(Str3
+Then
+sub(Str3,1,T-1)+"("+Str2+")"→Str3
+Else
+sub(Str3,1,T-1)+"("+Str2+")"+sub(Str3,inString(Str3,Str4,1)+1,length(Str3)-inString(Str3,Str4,1))→Str3
+End
+End
+End
+DelVar Str4

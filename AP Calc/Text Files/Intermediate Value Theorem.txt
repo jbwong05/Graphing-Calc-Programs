@@ -1,0 +1,29 @@
+Disp "Intermediate Value Theorem"
+prgmRESETVAR
+prgmCURREQU
+StoreGDB 1
+Prompt A,B
+ClrDraw
+A→Xmin:B→Xmax
+Y₉(fMin(Y₉,X,A,B))→Ymin:Y₉(fMax(Y₉,X,A,B))→Ymax
+FnOff 1,2,3,4,5,6,8,0
+FnOn 9
+DispGraph
+0→K
+While K≠105
+getKey→K
+End
+Menu("Continuous?","Yes",1,"No",2
+ClrHome
+FnOn 1,2,3,4,5,6,8,0
+FnOff 9
+RecallGDB 1
+Lbl 1
+Prompt G
+EquString(Y₉,Str1
+prgmNUM2STR
+"("+Str1+")-"+Str2→Str1
+StringEqu(Str1,Y₉
+Disp solve(Y₉,X,(A+B)/2
+Lbl 2
+prgmRESETVAR

@@ -1,0 +1,22 @@
+Disp "Riemann's Sum with X-Axis"
+prgmRESETVAR
+prgmCURREQU
+Prompt A,B
+Input "Number of Rectangles:",N
+(B-A)/N→W
+Menu("Choose: ","Left Endpoint",1,"Right Endpoint",2,"Midpoint",3
+
+0→R
+Lbl 1
+prgmRSLE
+Goto R
+Lbl 2
+prgmRSRE
+Goto R
+Lbl 3
+prgmRSMP
+Goto R
+
+Lbl R
+Disp R
+prgmRESETVAR

@@ -1,0 +1,21 @@
+Disp "Traps with X-Axis"
+prgmRESETVAR
+prgmCURREQU
+Prompt A,B
+Input "Number of Traps:",N
+(B-A)/N→W
+(B-A)/(2*N)→C
+A→T
+0→R
+For(I,1,N+1,1)
+If T=A or T=B
+Then
+R+Y₉(T)→R
+Else
+R+(2*Y₉(T))→R
+End
+T+W→T
+End
+R*C→R
+Disp R
+prgmRESETVAR

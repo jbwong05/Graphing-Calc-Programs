@@ -1,0 +1,32 @@
+Disp "EOT^2L"
+prgmRESETVAR
+prgmCURREQU
+Menu("Choose: ","Normal Equation",1,"Inverse",2
+Lbl 1
+Prompt X
+Disp "Y(X):"
+Disp Y₉(X)
+Disp "m:"
+Disp nDeriv(Y₉,X,X
+Goto R
+Lbl 2
+Prompt X
+EquString(Y₉,Str1
+X→G
+prgmNUM2STR
+Str1+"-"+Str2→Str3
+Str3→Y₉
+solve(Y₉,X,0→Y
+Disp "Y:"
+Disp Y
+DelVar Str3
+Str1→Y₉
+"nDeriv(Y₉,X,X)"→Y₀
+Y₀(Y)→T
+1/T→T
+Disp "m:"
+Disp T
+Goto R
+
+Lbl R
+prgmRESETVAR

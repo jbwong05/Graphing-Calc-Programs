@@ -1,0 +1,7 @@
+A→T
+For(I,1,N,1)
+R+Y₉(T)→R
+T+W→T
+End
+R*W→R
+Return

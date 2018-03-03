@@ -1,0 +1,56 @@
+Disp "Mean Value/Rolle's Theorem"
+prgmRESETVAR
+prgmCURREQU
+Menu("For Integrals?","Yes",5,"No",6
+Lbl 5
+Prompt A,B
+Menu("Choose","MVT",7,"Average Value",8
+Lbl 7
+"(fnInt(Y₉,X,A,B))/(B-A)"→Y₀
+Disp solve(Y₀,X,0
+Goto R
+Lbl 8
+Disp (1/(B-A))*fnInt(Y₉,X,A,B
+Goto R
+Lbl 6
+StoreGDB 1
+Prompt A,B
+ClrDraw
+"nDeriv(Y₉,X,X)"→Y₀
+A→Xmin:B→Xmax
+fMin(Y₉,X,A,B→L
+fMin(Y₀,X,A,B→T
+min(Y₉(L),Y₀(T)→Ymin
+fMax(Y₉,X,A,B→L
+fMax(Y₀,X,A,B→T
+max(Y₉(L),Y₀(T)→Ymax
+FnOff 1,2,3,4,5,6,8
+FnOn 9,0
+DispGraph
+0→K
+While K≠105
+getKey→K
+End
+Menu("Cont. and Diff.?","Yes",1,"No",2
+ClrHome
+FnOn 1,2,3,4,5,6,8
+FnOff 9,0
+RecallGDB 1
+Lbl 1
+Menu("MVT or Rolle's","MVT",3,"Rolle's",4
+Lbl 3
+(Y₉(B)-Y₉(A))/(B-A)→G
+prgmNUM2STR
+"nDeriv(Y₉,X,X)-"+Str2→Y₀
+Disp solve(Y₀,X,(A+B)/2
+Goto 2
+Lbl 4
+If Y₉(A)=Y₉(B)
+Then
+Disp solve(Y₀,X,(A+B)/2
+End
+Goto 2
+Lbl 2
+Disp "Check if within interval"
+Lbl R
+prgmRESETVAR

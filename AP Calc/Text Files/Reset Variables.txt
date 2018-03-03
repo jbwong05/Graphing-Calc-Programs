@@ -1,0 +1,16 @@
+DelVar A
+DelVar B
+DelVar C
+DelVar D
+DelVar E
+DelVar I
+DelVar N
+DelVar R
+DelVar T
+DelVar W
+DelVar X
+DelVar Y
+DelVar Str1
+DelVar Str2
+DelVar Str3
+Return
