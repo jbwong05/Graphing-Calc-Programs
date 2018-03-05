@@ -17,4 +17,5 @@ Disp X
 End
 C-1→C
 Disp "Iterations:",C
+0+X
 prgmRESETVAR

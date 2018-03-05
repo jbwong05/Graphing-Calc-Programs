@@ -12,6 +12,7 @@ Lbl 2
 Disp "Warning L1-L6 will be"
 Disp "overwritten"
 Pause "Press Enter to Cont."
+Disp "Calculating..."
 ClrAllLists
 For(I,1,((X-A)/C)+1,1
 For(J,1,4,1
@@ -68,10 +69,12 @@ End
 End
 End
 End
-
+End
 End
 
-End
-Disp "Answers Stored in L1-L4"
+Disp L₂(((X-A)/C)+1)
+0+L₂(((X-A)/C)+1)
+Disp "Values Stored in L1-L4"
+Disp "Press Stat->Edit"
 Disp "Cols: X,Y,dy/dx,dy"
 prgmRESETVAR
