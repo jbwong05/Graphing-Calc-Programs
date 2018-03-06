@@ -9,6 +9,7 @@ D+1→D
 Disp "Warning L1 will be"
 Disp "overwritten"
 Pause "Press Enter to cont."
+ClrList L1
 While X-T
 X→T
 round(X-(Y₉/Y₀),D)→X
