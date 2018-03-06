@@ -4,11 +4,8 @@ prgmCURREQU
 Prompt X
 "nDeriv(Y₉,X,X)"→Y₀
 FnOff 0
-X→X
 Input "Decimal Places:",D
 D+1→D
-0→T
-0→C
 While X-T
 X→T
 round(X-(Y₉/Y₀),D)→X
