@@ -67,9 +67,9 @@ If J=4
 Then
 If D>0
 Then
-round(L₃(I)*C,D)→[A](I,J
+round([A](I,3)*C,D)→[A](I,J
 Else
-L₃(I)*C→[A](I,J
+[A](I,3)*C→[A](I,J
 End
 End
 End
