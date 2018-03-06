@@ -14,20 +14,21 @@ Lbl 3
 Input "Decimal Places:",D
 D+1→D
 Lbl 4
-Disp "Warning L1-L6 will be"
+Disp "Warning [A] will be"
 Disp "overwritten"
 Pause "Press Enter to Cont."
 Disp "Calculating..."
-ClrAllLists
+DelVar [A]
+{((X-A)/C)+1,4→dim([A]
 For(I,1,((X-A)/C)+1,1
 For(J,1,4,1
 If J=1
 Then
 If D>0
 Then
-round(A+((C*I)-C),D)→L₁(I)
+round(A+((C*I)-C),D)→[A](I,J
 Else
-A+((C*I)-C)→L₁(I)
+A+((C*I)-C)→[A](I,J
 End
 Else
 If J=2
@@ -36,39 +37,39 @@ If I-1>0
 Then
 If D>0
 Then
-round(L₂(I-1)+L₄(I-1),D)→L₂(I)
+round([A](I-1,J)+[A](I-1,4),D)→[A](I,J
 Else
-L₂(I-1)+L₄(I-1)→L₂(I)
+[A](I-1,J)+[A](I-1,4)→[A](I,J
 End
 Else
-B→L₂(I)
+B→[A](I,J
 End
 Else
 If J=3
 Then
 Str1→Str3
-L₁(I)→G
+[A](I,1)→G
 prgmNUM2STR
 "X"→Str4
 prgmREPLACE
-L₂(I)→G
+[A](I,2)→G
 prgmNUM2STR
 "Y"→Str4
 prgmREPLACE
 If D>0
 Then
-round(expr(Str3),D)→L₃(I)
+round(expr(Str3),D)→[A](I,J
 Else
-expr(Str3→L₃(I)
+expr(Str3→[A](I,J
 End
 Else
 If J=4
 Then
 If D>0
 Then
-round(L₃(I)*C,D)→L₄(I)
+round(L₃(I)*C,D)→[A](I,J
 Else
-L₃(I)*C→L₄(I)
+L₃(I)*C→[A](I,J
 End
 End
 End
@@ -77,10 +78,10 @@ End
 End
 End
 
-Disp L₂(((X-A)/C)+1)
-0+L₂(((X-A)/C)+1)
-Disp "Values Stored in L1-L4"
-Disp "Press Stat->Edit"
+Disp [A](((X-A)/C)+1,2
+0+[A](((X-A)/C)+1,2
+Disp "Values Stored in [A]"
+Disp "Press 2nd->X^-1"
 Disp "Cols: X,Y,dy/dx,dy"
 AUTO
 prgmRESETVAR
