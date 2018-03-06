@@ -6,13 +6,19 @@ Prompt X
 FnOff 0
 Input "Decimal Places:",D
 D+1→D
+Disp "Warning L1 will be"
+Disp "overwritten"
+Pause "Press Enter to cont."
 While X-T
 X→T
 round(X-(Y₉/Y₀),D)→X
 C+1→C
+X→L₁(C)
 Disp X
 End
 C-1→C
 Disp "Iterations:",C
 0+X
+Disp "Values Stored in L1"
+Disp "Press Stat->Edit"
 prgmRESETVAR
