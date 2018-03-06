@@ -5,6 +5,7 @@ C - counting variable in NM
   - continuous flag for IVT/MVT/Rolles
 D - decimal places
 E - use previous equation flag
+F - flag for fractional answers
 G - constant for Intermediate Value Theorem
 I - index var for for loops
 L - temp variable
