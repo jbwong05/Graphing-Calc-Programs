@@ -1,7 +1,7 @@
 Disp "Newton's Method"
 prgmRESETVAR
 prgmCURREQU
-Prompt X
+round(solve(Y₉,X,0),0)→X
 "nDeriv(Y₉,X,X)"→Y₀
 FnOff 0
 Input "Decimal Places:",D
