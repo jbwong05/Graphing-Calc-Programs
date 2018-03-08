@@ -1,21 +1,26 @@
 Lbl S
 Menu("Formulas","Force",1,"Electric Field",2,"PE",3,"Work",4,"Potential (V)",5,"Quit",6
 Lbl 1
+ClrHome
 Pause "*F=(kq1q2)/r^2"
 Pause "F=qE"
 Goto S
 Lbl 2
+ClrHome
 Pause "*E=(kq)/r^2"
 Goto S
 Lbl 3
+ClrHome
 Pause "Delta PE=qEd"
 Pause "*(-kq1q2)/r"
 Goto S
 Lbl 4
+ClrHome
 Pause "Wfield=-Delta PE"
 Pause "W=qDeltaV"
 Goto S
 Lbl 5
+ClrHome
 Pause "Delta V=Delta PE/q
 Pause "Delta V=-Ed"
 Pause "*(kq)/r"
