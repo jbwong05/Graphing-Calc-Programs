@@ -1,0 +1,43 @@
+prgmRESETVAR
+Input "dy/dx:",Str1
+Input "Left X Bounds:",A
+Input "Right X Bounds:",X
+Input "Bottom Y Bounds:",B
+Input "Top Y Bounds",Y
+A→U
+B→L
+Disp "Warning [A] will be"
+Disp "overwritten"
+Pause "Press Enter to Cont."
+Disp "Creating Table"
+DelVar [A]
+{(abs(Y-B)+1,abs(X-A)+1→dim([A]
+For(I,1,abs(Y-B)+1,1
+For(J,1,abs(X-A)+1,1
+If I=1 and J>1
+Then
+U→[A](1,J
+U+1→U
+Else
+If I≠1
+Then
+If J=1
+Then
+L→[A](I,1
+L+1→L
+Else
+Goto E
+Lbl B
+End
+End
+End
+End
+End
+Disp "Table stored in [A]"
+Pause "Press Enter to Cont."
+
+prgmRESETVAR
+
+Lbl E
+
+Goto B
