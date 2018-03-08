@@ -1,5 +1,5 @@
 Lbl S
-Menu("Formulas","Force",1,"Electric Field",2,"PE",3,"Work",4,"Potential (V)",5,"Quit",6
+Menu("Formulas","Force",1,"Electric Field",2,"PE",3,"Work",4,"Potential (V)",5,"Constants",6"Quit",7
 Lbl 1
 ClrHome
 Pause "*F=(kq1q2)/r^2"
@@ -26,4 +26,25 @@ Pause "Delta V=-Ed"
 Pause "*(kq)/r"
 Goto S
 Lbl 6
+Menu("Constants","K",11,"Proton",12,"Electron",13,"Neutron",14
+Lbl 11
+ClrHome
+Pause "8.99*10^9 N/C"
+Goto S
+Lbl 12
+ClrHome
+Pause "1.6*10^-19 C"
+Pause "1.67*10^-27 kg"
+Goto S
+Lbl 13
+ClrHome
+Pause "-1.6*10^-19 C"
+Pause "9.11*10^-31 kg"
+Goto S
+Lbl 14
+ClrHome
+Pause "0 C"
+Pause "1.67*10^-27 kg"
+Goto S
+Lbl 7
 Stop
