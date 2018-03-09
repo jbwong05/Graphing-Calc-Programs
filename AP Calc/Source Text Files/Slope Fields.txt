@@ -3,17 +3,19 @@ Input "dy/dx:",Str1
 Input "Left X Bounds:",A
 Input "Right X Bounds:",X
 Input "Bottom Y Bounds:",B
-Input "Top Y Bounds",Y
+Input "Top Y Bounds:",Y
 A→U
-B→L
-Disp "Warning [A] will be"
-Disp "overwritten"
+Y→L
+Disp "Warning [A] and [B] will"
+Disp "be overwritten"
 Pause "Press Enter to Cont."
-Disp "Creating Table"
+Disp "Creating Table..."
 DelVar [A]
-{(abs(Y-B)+1,abs(X-A)+1→dim([A]
-For(I,1,abs(Y-B)+1,1
-For(J,1,abs(X-A)+1,1
+DelVar [B]
+{abs(Y-B)+2,abs(X-A)+2→dim([A]
+{abs(Y-B)+2,abs(X-A)+2→dim([B]
+For(I,1,abs(Y-B)+2,1
+For(J,1,abs(X-A)+2,1
 If I=1 and J>1
 Then
 U→[A](1,J
@@ -24,7 +26,7 @@ Then
 If J=1
 Then
 L→[A](I,1
-L+1→L
+L-1→L
 Else
 Goto E
 Lbl B
@@ -33,11 +35,66 @@ End
 End
 End
 End
+Disp [A]
 Disp "Table stored in [A]"
-Pause "Press Enter to Cont."
-
+Disp "Flags for Undef in [B]"
+Pause "Press Enter to Graph."
+"([A](I,J)*(X-[A](1,J)))+[A](I,1)"→Y₉
+FnOff 9
+ClrDraw
+A-1→Xmin:X+1→Xmax
+B-1→Ymin:Y+1→Ymax
+For(I,2,abs(Y-B)+2,1
+For(J,2,abs(X-A)+2,1
+If [A](I,J)≠0 or ([A](I,J)=0 and [B](I,J)=0)
+Then
+Line([A](1,J)-0.25,Y₉([A](1,J)-0.25),[A](1,J)+0.25,Y₉([A](1,J)+0.25))
+Else
+Line([A](1,J),[A](I,1)-0.25,[A](1,J),[A](I,1)+0.25)
+End
+End
+End
+DelVar Y₉
 prgmRESETVAR
+Stop
 
 Lbl E
-
+Str1→Str3
+[A](1,J)→G
+prgmNUM2STR
+"X"→Str4
+prgmREPLACE
+[A](I,1)→G
+prgmNUM2STR
+"Y"→Str4
+prgmREPLACE
+1→C
+While inString(Str3,"/",C)>0
+inString(Str3,"/",C)→C
+If sub(Str3,C+1,1)="("
+Then
+C+1→T
+While inString(Str3,"(",T+1)≠0 and inString(Str3,"(",T)<inString(Str3,")",T)
+inString(Str3,")",T)+1→T
+End
+If expr(sub(Str3,C+1,inString(Str3,")",T)-C))=0
+Then
+1→Z
+End
+Else
+If expr(sub(Str3,1,1))=0
+Then
+1→Z
+End
+End
+C+1→C
+End
+If Z=1
+Then
+0→[A](I,J
+1→[B](I,J
+Else
+expr(Str3)→[A](I,J
+End
+0→Z
 Goto B
