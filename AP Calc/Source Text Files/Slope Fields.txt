@@ -74,10 +74,11 @@ inString(Str3,"/",C)→C
 If sub(Str3,C+1,1)="("
 Then
 C+1→T
-While inString(Str3,"(",T+1)≠0 and inString(Str3,"(",T)<inString(Str3,")",T)
-inString(Str3,")",T)+1→T
+inString(Str3,")",T)→P
+While inString(Str3,"(",T+1)≠0 and inString(Str3,"(",T)<P
+P+1→T
 End
-If expr(sub(Str3,C+1,inString(Str3,")",T)-C))=0
+If expr(sub(Str3,C+1,P-C))=0
 Then
 1→Z
 length(Str3)→C
