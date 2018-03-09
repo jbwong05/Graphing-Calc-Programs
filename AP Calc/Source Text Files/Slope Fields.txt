@@ -84,7 +84,7 @@ Then
 length(Str3)→C
 End
 Else
-If expr(sub(Str3,1,1))=0
+If expr(sub(Str3,C+1,1))=0
 Then
 1→Z
 length(Str3)→C
