@@ -20,6 +20,7 @@ W - width for RmS
 X - x coordinate
   - recursive x in NM
 Y - y coordinate
+Z - flag for potential error (ex. divide by 0)
 
 Y9 - main equation
 y0 - first derivative
