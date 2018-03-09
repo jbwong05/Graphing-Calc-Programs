@@ -11,6 +11,7 @@ I - index var for for loops
 L - temp variable
 M - min/max temp variable
 N - number of x (ex. rects for RmS/traps for Traps)
+P - temp variable
 R - result
   - exit of program
 S - starting label
