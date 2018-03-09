@@ -3,10 +3,12 @@ B - constant (either second integral bound or second y coordinate)
 C - counting variable in NM
   - (b-a/2n) constant for traps
   - continuous flag for IVT/MVT/Rolles
+  - temp counting variable
 D - decimal places
 E - use previous equation flag
 F - flag for fractional answers
 G - constant for Intermediate Value Theorem
+  - number to be converted to string (NUM2STR: G->Str2)
 I - index var for for loops
 L - temp variable
 M - min/max temp variable
