@@ -4,13 +4,16 @@ DelVar C
 DelVar D
 DelVar E
 DelVar I
+DelVar L
 DelVar N
 DelVar P
 DelVar R
 DelVar T
+DelVar U
 DelVar W
 DelVar X
 DelVar Y
+DelVar Z
 DelVar Str1
 DelVar Str2
 DelVar Str3
