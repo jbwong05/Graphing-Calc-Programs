@@ -10,6 +10,7 @@ F - flag for fractional answers
 G - constant for Intermediate Value Theorem
   - number to be converted to string (NUM2STR: G->Str2)
 I - index var for for loops
+J - index var for nested for loops
 L - temp variable
 M - min/max temp variable
 N - number of x (ex. rects for RmS/traps for Traps)

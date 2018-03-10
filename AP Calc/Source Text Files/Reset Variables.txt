@@ -3,11 +3,16 @@ DelVar B
 DelVar C
 DelVar D
 DelVar E
+DelVar F
+DelVar G
 DelVar I
+DelVar J
 DelVar L
+DelVar M
 DelVar N
 DelVar P
 DelVar R
+DelVar S
 DelVar T
 DelVar U
 DelVar W
@@ -17,4 +22,5 @@ DelVar Z
 DelVar Str1
 DelVar Str2
 DelVar Str3
+DelVar Str4
 Return

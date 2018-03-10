@@ -28,37 +28,7 @@ Then
 L→[A](I,1
 L-1→L
 Else
-Goto E
-Lbl B
-End
-End
-End
-End
-End
-Disp [A]
-Disp "Table stored in [A]"
-Disp "Flags for Undef in [B]"
-Pause "Press Enter to Graph."
-"([A](I,J)*(X-[A](1,J)))+[A](I,1)"→Y₉
-FnOff 9
-ClrDraw
-A-1→Xmin:X+1→Xmax
-B-1→Ymin:Y+1→Ymax
-For(I,2,abs(Y-B)+2,1
-For(J,2,abs(X-A)+2,1
-If [A](I,J)≠0 or ([A](I,J)=0 and [B](I,J)=0)
-Then
-Line([A](1,J)-0.25,Y₉([A](1,J)-0.25),[A](1,J)+0.25,Y₉([A](1,J)+0.25))
-Else
-Line([A](1,J),[A](I,1)-0.25,[A](1,J),[A](I,1)+0.25)
-End
-End
-End
-DelVar Y₉
-prgmRESETVAR
-Stop
 
-Lbl E
 Str1→Str3
 [A](1,J)→G
 prgmNUM2STR
@@ -100,4 +70,30 @@ Else
 expr(Str3)→[A](I,J
 End
 0→Z
-Goto B
+
+End
+End
+End
+End
+End
+Disp [A]
+Disp "Table stored in [A]"
+Disp "Flags for Undef in [B]"
+Pause "Press Enter to Graph."
+"([A](I,J)*(X-[A](1,J)))+[A](I,1)"→Y₉
+FnOff 9
+ClrDraw
+A-1→Xmin:X+1→Xmax
+B-1→Ymin:Y+1→Ymax
+For(I,2,abs(Y-B)+2,1
+For(J,2,abs(X-A)+2,1
+If [A](I,J)≠0 or ([A](I,J)=0 and [B](I,J)=0)
+Then
+Line([A](1,J)-0.25,Y₉([A](1,J)-0.25),[A](1,J)+0.25,Y₉([A](1,J)+0.25))
+Else
+Line([A](1,J),[A](I,1)-0.25,[A](1,J),[A](I,1)+0.25)
+End
+End
+End
+DelVar Y₉
+prgmRESETVAR
