@@ -89,7 +89,11 @@ For(I,2,abs(Y-B)+2,1
 For(J,2,abs(X-A)+2,1
 If [A](I,J)≠0 or ([A](I,J)=0 and [B](I,J)=0)
 Then
-Line([A](1,J)-0.25,Y₉([A](1,J)-0.25),[A](1,J)+0.25,Y₉([A](1,J)+0.25))
+0.25→T
+While abs(Y₉([A](1,J)+T)-Y₉([A](1,J)-T))>0.5
+T-0.02→T
+End
+Line([A](1,J)-T,Y₉([A](1,J)-T),[A](1,J)+T,Y₉([A](1,J)+T))
 Else
 Line([A](1,J),[A](I,1)-0.25,[A](1,J),[A](I,1)+0.25)
 End
