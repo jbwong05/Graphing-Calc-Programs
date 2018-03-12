@@ -8,7 +8,6 @@ A→U
 Y→L
 Menu("Values as:","Fractions",1,"Decimals",2
 Lbl 1
-1→F
 FRAC-APPROX
 Lbl 2
 Disp "Warning [A] and [B] will"
