@@ -6,6 +6,11 @@ Input "Bottom Y Bounds:",B
 Input "Top Y Bounds:",Y
 A→U
 Y→L
+Menu("Values as:","Fractions",1,"Decimals",2
+Lbl 1
+1→F
+FRAC-APPROX
+Lbl 2
 Disp "Warning [A] and [B] will"
 Disp "be overwritten"
 Pause "Press Enter to Cont."
@@ -99,5 +104,6 @@ Line([A](1,J),[A](I,1)-0.25,[A](1,J),[A](I,1)+0.25)
 End
 End
 End
+AUTO
 DelVar Y₉
 prgmRESETVAR
