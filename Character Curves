@@ -1,18 +1,30 @@
 ClrDraw
 Param
 Lbl S
-Menu("Select:","Dumbledore",1,"Alakazam",2)
+Menu("Page 1:","Dumbledore",1,"Alakazam",2,"Next Page",7
 Lbl 1
 "equation"→X1T
 "equation"→Y1T
-0→Tmin
-220→Tmax
+insert_number→Tmin
+insert_number→Tmax
 DispGraph
-Goto S
+Stop
 Lbl 2
 "equation"→X1T
 "equation"→Y1T
-0→Tmin
-220→Tmax
+insert_number→Tmin
+insert_number→Tmax
 DispGraph
+Stop
+
+Lbl 7
+Menu("Page 2:","Back",8,"Insert_Title",9
+Lbl 8
 Goto S
+Lbl 9
+"equation"→X1T
+"equation"→Y1T
+insert_number→Tmin
+insert_number→Tmax
+DispGraph
+Stop
