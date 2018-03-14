@@ -1,0 +1,18 @@
+ClrDraw
+Param
+Lbl S
+Menu("Select:","Dumbledore",1,"Alakazam",2)
+Lbl 1
+"equation"→X1T
+"equation"→Y1T
+0→Tmin
+220→Tmax
+DispGraph
+Goto S
+Lbl 2
+"equation"→X1T
+"equation"→Y1T
+0→Tmin
+220→Tmax
+DispGraph
+Goto S
