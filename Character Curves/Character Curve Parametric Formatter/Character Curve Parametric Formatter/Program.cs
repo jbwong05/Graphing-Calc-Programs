@@ -22,6 +22,16 @@ namespace Character_Curve_Parametric_Formatter
                     sw.WriteLine("Y1T: ");
                 }
             }
+            else
+            {
+                File.WriteAllText(equations, String.Empty);
+                using (StreamWriter sw = File.AppendText(equations))
+                {
+                    sw.WriteLine("X1T: ");
+                    sw.WriteLine("\r\n");
+                    sw.WriteLine("Y1T: ");
+                }
+            }
             Console.WriteLine("Input Equations into Parametric Equations.txt");
             Console.WriteLine("Make sure to save text document");
             Process.Start(equations);
@@ -47,17 +57,22 @@ namespace Character_Curve_Parametric_Formatter
 
         static string format(string text)
         {
-            string formattedText = "";
+            int n;
+            string formattedText = "(";
             while(text.IndexOf(" ") != -1)
             {
                 formattedText += text.Substring(0, text.IndexOf(" "));
                 text = text.Substring(text.IndexOf(" ")+1);
                 if (text.Substring(0, 1) == "s")
                 {
-                    formattedText += "*";
+                    formattedText += ")*";
+                }
+                else if(int.TryParse(text.Substring(0,1), out n))
+                {
+                    formattedText += "(";
                 }
             }
-            return (formattedText+text).Replace('t','T');
+            return /*(*/formattedText+text/*).Replace('t','T')*/;
         }
     }
 }
