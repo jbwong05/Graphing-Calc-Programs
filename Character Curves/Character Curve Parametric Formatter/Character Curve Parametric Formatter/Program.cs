@@ -22,7 +22,7 @@ namespace Character_Curve_Parametric_Formatter
                     sw.WriteLine("Y(T): ");
                 }
             }
-            else
+           /* else
             {
                 File.WriteAllText(equations, String.Empty);
                 using (StreamWriter sw = File.AppendText(equations))
@@ -31,16 +31,16 @@ namespace Character_Curve_Parametric_Formatter
                     sw.WriteLine("\r\n");
                     sw.WriteLine("Y(T): ");
                 }
-            }
+            }*/
             Console.WriteLine("Input Equations into Parametric Equations.txt");
             Console.WriteLine("Make sure to save text document");
             Process.Start(equations);
             Console.WriteLine("Press any key to continue and format parametric equations...");
             Console.ReadKey();
             string text = File.ReadAllText(equations);
-            string xParametric = text.Substring(4, text.IndexOf("Y(T)") - 4);
+            string xParametric = text.Substring(5, text.IndexOf("\r\n") - 4);
             xParametric = xParametric.Trim();
-            string yParametric = text.Substring(text.IndexOf("Y(T)") + 4);
+            string yParametric = text.Substring(text.IndexOf("Y(T)") + 5);
             yParametric = yParametric.Trim();
             xParametric = format(xParametric);
             yParametric = format(yParametric);
@@ -68,7 +68,7 @@ namespace Character_Curve_Parametric_Formatter
                     formattedText += "*";
                 }
             }
-            text = formattedText;
+            text = formattedText + text;
             formattedText = "";
             int temp = text.IndexOf("/");
             while (temp != -1)
@@ -83,9 +83,9 @@ namespace Character_Curve_Parametric_Formatter
                 }
                 else
                 {
-                    formattedText += text.Substring(0, firstBracket+1) + "(" + text.Substring(firstBracket+1, temp - firstBracket + 1);
+                    formattedText += text.Substring(0, firstBracket+1) + "(" + text.Substring(firstBracket+1, temp - firstBracket);
                 }
-                text = text.Substring(0, temp + 1);
+                text = text.Substring(temp + 1);
                 int secondBracket = 0;
                 while(secondBracket<text.Length && int.TryParse(text.Substring(secondBracket,1), out n))
                 {
@@ -103,6 +103,7 @@ namespace Character_Curve_Parametric_Formatter
                 temp = text.IndexOf("/");
             }
             return (formattedText+text).Replace('t','T');
+            //return formattedText + text;
         }
     }
 }
