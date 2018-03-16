@@ -63,10 +63,10 @@ namespace Character_Curve_Parametric_Formatter
             {
                 formattedText += text.Substring(0, text.IndexOf(" "));
                 text = text.Substring(text.IndexOf(" ")+1);
-                if (text.Substring(0, 1) == "s")
+                /*if (text.Substring(0, 1) == "s")
                 {
                     formattedText += "*";
-                }
+                }*/
             }
             text = formattedText + text;
             formattedText = "";
