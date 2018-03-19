@@ -34,9 +34,11 @@ namespace Character_Curve_Parametric_Formatter
             }*/
             Console.WriteLine("Input Equations into Parametric Equations.txt");
             Console.WriteLine("Make sure to save text document");
-            Process.Start(equations);
+            Process.Start("notepad.exe",equations);
             Console.WriteLine("Press any key to continue and format parametric equations...");
             Console.ReadKey();
+            NotepadCloser closer = new NotepadCloser();
+            closer.close();
             string text = File.ReadAllText(equations);
             string xParametric = text.Substring(5, text.IndexOf("\r\n") - 4);
             xParametric = xParametric.Trim();
@@ -52,7 +54,7 @@ namespace Character_Curve_Parametric_Formatter
                 sw.WriteLine("Final Y(T): " + yParametric);
             }
             Console.WriteLine("Equations Successfully Formatted");
-            Process.Start(equations);
+            Process.Start("notepad.exe",equations);
         }
 
         static string format(string text)
