@@ -1,24 +1,35 @@
 ClrDraw
 Param
+StoreGDB 1
 Lbl S
-Menu("Page 1:","Dumbledore",1,"Alakazam",2,"Next Page",7
+Menu("Page 1:","PI",1,"Alakazam",2,"Next Page",7
 Lbl 1
-"equation"→X1T
-"equation"→Y1T
-insert_number→Tmin
+"(17/31)sin((235/57)-32T)+(19/17)sin((192/55)-30T)+(47/32)sin((69/25)-29T)+(35/26)sin((75/34)-27T)+(6/31)sin((23/10)-26T)+(35/43)sin((10/33)-25T)+(126/43)sin((421/158)-24T)+(143/57)sin((35/22)-22T)+(106/27)sin((84/29)-21T)+(88/25)sin((23/27)-20T)+(74/27)sin((53/22)-19T)+(44/53)sin((117/25)-18T)+(126/25)sin((88/49)-17T)+(79/11)sin((43/26)-16T)+(43/12)sin((41/17)-15T)+(47/27)sin((244/81)-14T)+(8/5)sin((79/19)-13T)+(373/46)sin((109/38)-12T)+(1200/31)sin((133/74)-11T)+(67/24)sin((157/61)-10T)+(583/28)sin((13/8)-8T)+(772/35)sin((59/16)-7T)+(3705/46)sin((117/50)-6T)+(862/13)sin((19/8)-5T)+(6555/34)sin((157/78)-3T)+(6949/13)sin((83/27)-T)-(6805/54)sin(2T+(1/145))-(5207/37)sin(4T+(49/74))-(1811/58)sin(9T+(55/43))-(63/20)sin(23T+(2/23))-(266/177)sin(28T+(13/18))-(2/21)sin(31T+(7/16))"→X1T
+"(70/37)sin((65/32)-32T)+(11/12)sin((98/41)-31T)+(26/29)sin((35/12)-30T)+(54/41)sin((18/7)-29T)+(177/71)sin((51/19)-27T)+(59/34)sin((125/33)-26T)+(49/29)sin((18/11)-25T)+(151/75)sin((59/22)-24T)+(52/9)sin((118/45)-22T)+(52/33)sin((133/52)-21T)+(37/45)sin((61/14)-20T)+(143/46)sin((144/41)-19T)+(254/47)sin((19/52)-18T)+(246/35)sin((92/25)-17T)+(722/111)sin((176/67)-16T)+(136/23)sin((3/19)-15T)+(273/25)sin((32/21)-13T)+(229/33)sin((117/28)-12T)+(19/4)sin((43/11)-11T)+(135/8)sin((23/10)-10T)+(205/6)sin((33/23)-8T)+(679/45)sin((55/12)-7T)+(101/8)sin((11/12)-6T)+(2760/59)sin((40/11)-5T)+(1207/18)sin((21/23)-4T)+(8566/27)sin((39/28)-3T)+(12334/29)sin((47/37)-2T)+(15410/39)sin((185/41)-T)-(596/17)sin(9T+(3/26))-(247/28)sin(14T+(25/21))-(458/131)sin(23T+(21/37))-(41/36)sin(28T+(7/8))"→Y1T
+0→Tmin
 insert_number→Tmax
+insert_number→Tstep
+-1000→Xmin:1000→Xmax
+100→Xscl
+-1000→Ymin:1000→Ymax
+100→Yscl
 DispGraph
-Stop
+Goto R
 Lbl 2
 "equation"→X1T
 "equation"→Y1T
 insert_number→Tmin
 insert_number→Tmax
+insert_number→Tstep
+insert_number→Xmin:insert_number→Xmax
+insert_number→Xscl
+insert_number→Ymin:insert_number→Ymax
+insert_number→Yscl
 DispGraph
-Stop
+Goto R
 
 Lbl 7
-Menu("Page 2:","Back",8,"Insert_Title",9
+Menu("Page 2:","Back",8,"Insert_Title",9,"Next Page",14
 Lbl 8
 Goto S
 Lbl 9
@@ -26,5 +37,17 @@ Lbl 9
 "equation"→Y1T
 insert_number→Tmin
 insert_number→Tmax
+insert_number→Tstep
+insert_number→Xmin:insert_number→Xmax
+insert_number→Xscl
+insert_number→Ymin:insert_number→Ymax
+insert_number→Yscl
 DispGraph
-Stop
+Goto R
+Lbl 14
+Menu("Page 3:","Back",15
+Lbl 15
+Goto 7
+
+Lbl R
+RecallGDB 1
