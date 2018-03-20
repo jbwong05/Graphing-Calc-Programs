@@ -10,6 +10,7 @@ namespace Character_Curve_Parametric_Formatter
 {
     class Program
     {
+        [STAThread]
         static void Main(string[] args)
         {
             string equations = @"Parametric Equations.txt";
@@ -22,7 +23,7 @@ namespace Character_Curve_Parametric_Formatter
                     sw.WriteLine("Y(T): ");
                 }
             }
-           /* else
+           else
             {
                 File.WriteAllText(equations, String.Empty);
                 using (StreamWriter sw = File.AppendText(equations))
@@ -31,7 +32,7 @@ namespace Character_Curve_Parametric_Formatter
                     sw.WriteLine("\r\n");
                     sw.WriteLine("Y(T): ");
                 }
-            }*/
+            }
             Console.WriteLine("Input Equations into Parametric Equations.txt");
             Console.WriteLine("Make sure to save text document");
             Process.Start("notepad.exe",equations);
@@ -46,6 +47,17 @@ namespace Character_Curve_Parametric_Formatter
             yParametric = yParametric.Trim();
             xParametric = format(xParametric);
             yParametric = format(yParametric);
+            Console.WriteLine("Equations Successfully Formatted");
+            System.Windows.Forms.Clipboard.SetText(xParametric);
+            Console.WriteLine("X(t) stored in clipboard");
+            Console.WriteLine("Press Ctrl + V to paste");
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
+            System.Windows.Forms.Clipboard.SetText(yParametric);
+            Console.WriteLine("Y(t) stored in clipboard");
+            Console.WriteLine("Press Ctrl + V to paste");
+            Console.WriteLine("Press any key to exit...");
+            Console.ReadKey();
             using (StreamWriter sw = File.AppendText(equations))
             {
                 sw.WriteLine("\r\n");
@@ -53,7 +65,6 @@ namespace Character_Curve_Parametric_Formatter
                 sw.WriteLine("\r\n");
                 sw.WriteLine("Final Y(T): " + yParametric);
             }
-            Console.WriteLine("Equations Successfully Formatted");
             Process.Start("notepad.exe",equations);
         }
 
