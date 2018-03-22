@@ -26,11 +26,11 @@ namespace Parametric_Formatter_Form
         {
             if(textBox1.Text != "")
             {
-                Clipboard.SetText(formatEquation(textBox1.Text));
+                Clipboard.SetText(FormatEquation(textBox1.Text));
             }
         }
 
-        private string formatEquation(string originalEquation)
+        private string FormatEquation(string originalEquation)
         {
             int n;
             string formattedEquation = "";
