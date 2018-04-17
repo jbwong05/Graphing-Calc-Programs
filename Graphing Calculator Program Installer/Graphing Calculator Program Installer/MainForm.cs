@@ -181,7 +181,8 @@ namespace Graphing_Calculator_Program_Installer
                 {
                     selectedFilesList.Items.Remove(tempSelectedItems[i]);
                 }*/
-                selectedFilesList.Items.Remove(selectedFilesList.SelectedItem);
+                //selectedFilesList.Items.Remove(selectedFilesList.SelectedItem);
+                selectedFilesList.Items.ClearSelected();
             }
         }
 
