@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.clearButton = new System.Windows.Forms.Button();
+            this.copyButton = new System.Windows.Forms.Button();
+            this.copyToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // textBox1
@@ -40,6 +42,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(481, 26);
             this.textBox1.TabIndex = 0;
+            this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
             // label1
             // 
@@ -50,33 +53,40 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Equation:";
             // 
-            // button1
+            // clearButton
             // 
-            this.button1.Location = new System.Drawing.Point(499, 46);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 37);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Clear Text";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.clearButton.Location = new System.Drawing.Point(499, 46);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(117, 37);
+            this.clearButton.TabIndex = 2;
+            this.clearButton.Text = "Clear Text";
+            this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // button2
+            // copyButton
             // 
-            this.button2.Location = new System.Drawing.Point(622, 46);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(294, 37);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Copy Formatted Equation to Clipboard";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.copyButton.Location = new System.Drawing.Point(622, 46);
+            this.copyButton.Name = "copyButton";
+            this.copyButton.Size = new System.Drawing.Size(294, 37);
+            this.copyButton.TabIndex = 3;
+            this.copyButton.Text = "Copy Formatted Equation to Clipboard";
+            this.copyButton.UseVisualStyleBackColor = true;
+            this.copyButton.Click += new System.EventHandler(this.Button2_Click);
+            // 
+            // copyToolTip
+            // 
+            this.copyToolTip.AutoPopDelay = 5000;
+            this.copyToolTip.InitialDelay = 0;
+            this.copyToolTip.ReshowDelay = 500;
+            this.copyToolTip.ShowAlways = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(928, 99);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.copyButton);
+            this.Controls.Add(this.clearButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Name = "Form1";
@@ -91,8 +101,9 @@
 
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button clearButton;
+        private System.Windows.Forms.Button copyButton;
+        private System.Windows.Forms.ToolTip copyToolTip;
     }
 }
 

@@ -15,18 +15,20 @@ namespace Parametric_Formatter_Form
         public Form1()
         {
             InitializeComponent();
+            copyToolTip.SetToolTip(copyButton, "Copy");
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             textBox1.Text = "";
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             if(textBox1.Text != "")
             {
                 Clipboard.SetText(FormatEquation(textBox1.Text));
+                copyToolTip.SetToolTip(copyButton, "Text Copied");
             }
         }
 
@@ -79,6 +81,14 @@ namespace Parametric_Formatter_Form
                 temp = originalEquation.IndexOf("/");
             }
             return (formattedEquation + originalEquation).Replace('t', 'T');
+        }
+
+        private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            if(copyToolTip.GetToolTip(copyButton)=="Text Copied")
+            {
+                copyToolTip.SetToolTip(copyButton, "Copy");
+            }
         }
     }
 }
