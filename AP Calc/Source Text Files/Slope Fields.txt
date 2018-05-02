@@ -89,8 +89,10 @@ FnOff 9
 ClrDraw
 A-1→Xmin:X+1→Xmax
 B-1→Ymin:Y+1→Ymax
-For(I,2,abs(Y-B)+2,1
-For(J,2,abs(X-A)+2,1
+abs(Y-B)+2→R
+abs(X-A)+2→C
+For(I,2,R,1
+For(J,2,C,1
 If [A](I,J)≠0 or ([A](I,J)=0 and [B](I,J)=0)
 Then
 0.25→T
