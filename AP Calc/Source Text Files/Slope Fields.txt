@@ -8,7 +8,7 @@ A→U
 Y→L
 Menu("Values as:","Fractions",1,"Decimals",2
 Lbl 1
-FRAC-APPROX
+FRAC
 Lbl 2
 Disp "Warning [A] and [B] will"
 Disp "be overwritten"
@@ -32,7 +32,6 @@ Then
 L→[A](I,1
 L-1→L
 Else
-
 Str1→Str3
 [A](1,J)→G
 prgmNUM2STR
@@ -51,6 +50,7 @@ C+1→T
 inString(Str3,")",T)→P
 While inString(Str3,"(",T+1)≠0 and inString(Str3,"(",T+1)<P
 P+1→T
+inString(Str3,")",T)→P
 End
 If expr(sub(Str3,C+1,P-C))=0
 Then

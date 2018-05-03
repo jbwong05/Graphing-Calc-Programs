@@ -1,3 +1,23 @@
+prgmRESETVAR
+Input "dy/dx:",Str1
+Input "Left X Bounds:",A
+Input "Right X Bounds:",X
+Input "Bottom Y Bounds:",B
+Input "Top Y Bounds:",Y
+A→U
+Y→L
+Menu("Values as:","Fractions",1,"Decimals",2
+Lbl 1
+FRAC
+Lbl 2
+Disp "Warning [A] and [B] will"
+Disp "be overwritten"
+Pause "Press Enter to Cont."
+Disp "Creating Table..."
+DelVar [A]
+DelVar [B]
+{abs(Y-B)+2,abs(X-A)+2→dim([A]
+{abs(Y-B)+2,abs(X-A)+2→dim([B]
 //U is left x bounds
 //L is bottom y bounds
 For(I,1,abs(Y-B)+2,1 //I is rows
@@ -32,11 +52,11 @@ For(I,1,abs(Y-B)+2,1 //I is rows
 							inString(Str3,")",T)→P //set P to index of ")" after division sign
 							While inString(Str3,"(",T+1)≠0 and inString(Str3,"(",T+1)<P //while there is "(" after first "(" and its index comes before the ")"
 								P+1→T //move T to after found ")"
-								//
+								inString(Str3,")",T)→P //move P to next index of ")"
 							End
-							If expr(sub(Str3,C+1,P-C))=0
+							If expr(sub(Str3,C+1,P-C))=0 //check if denominator = 0
 							Then
-								1→Z
+								1→Z //if so set flags for divide by 0 error
 								length(Str3)→C
 							End
 						Else //symbol after division sign is not a "(", assumed to be single digit denominator
@@ -61,3 +81,31 @@ For(I,1,abs(Y-B)+2,1 //I is rows
 		End
 	End
 End
+Disp [A]
+Disp "Table stored in [A]"
+Disp "Flags for Undef in [B]"
+Pause "Press Enter to Graph."
+"([A](I,J)*(X-[A](1,J)))+[A](I,1)"→Y₉
+FnOff 9
+ClrDraw
+A-1→Xmin:X+1→Xmax
+B-1→Ymin:Y+1→Ymax
+abs(Y-B)+2→R
+abs(X-A)+2→C
+For(I,2,R,1
+For(J,2,C,1
+If [A](I,J)≠0 or ([A](I,J)=0 and [B](I,J)=0)
+Then
+0.25→T
+While abs(Y₉([A](1,J)+T)-Y₉([A](1,J)-T))>0.5
+T-0.02→T
+End
+Line([A](1,J)-T,Y₉([A](1,J)-T),[A](1,J)+T,Y₉([A](1,J)+T))
+Else
+Line([A](1,J),[A](I,1)-0.25,[A](1,J),[A](I,1)+0.25)
+End
+End
+End
+AUTO
+DelVar Y₉
+prgmRESETVAR
