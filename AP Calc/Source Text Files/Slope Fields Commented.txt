@@ -1,0 +1,63 @@
+//U is left x bounds
+//L is bottom y bounds
+For(I,1,abs(Y-B)+2,1 //I is rows
+	For(J,1,abs(X-A)+2,1 //J is cols
+		If I=1 and J>1 //if first row not the first column
+		Then
+			U→[A](1,J //set the header labels
+			U+1→U
+		Else //not the first row or first row first column
+			If I≠1 //not the first row
+			Then
+				If J=1 //if first column
+				Then
+					L→[A](I,1 //set left labels
+					L-1→L
+				Else
+					Str1→Str3 //put equation in Str3
+					[A](1,J)→G //put current x coordinate into G 
+					prgmNUM2STR //convert current x coordinate into Str2
+					"X"→Str4 //places "X" into Str4 as reference for what to replace
+					prgmREPLACE //replaces x's in Str3 with current x coord
+					[A](I,1)→G //places current y coord into G
+					prgmNUM2STR //converts current y coord into Str2
+					"Y"→Str4 //places "Y" into Str4 as reference for what to replace
+					prgmREPLACE //replaces y's in Str3 with current y coord
+					1→C //set C to initial value 1
+					While inString(Str3,"/",C)>0 //while equation has a division sign
+						inString(Str3,"/",C)→C //set C to location of division sign
+						If sub(Str3,C+1,1)="(" //if symbol after division sign is a "("
+						Then
+							C+1→T //set T to index of denominator
+							inString(Str3,")",T)→P //set P to index of ")" after division sign
+							While inString(Str3,"(",T+1)≠0 and inString(Str3,"(",T+1)<P //while there is "(" after first "(" and its index comes before the ")"
+								P+1→T //move T to after found ")"
+								//
+							End
+							If expr(sub(Str3,C+1,P-C))=0
+							Then
+								1→Z
+								length(Str3)→C
+							End
+						Else //symbol after division sign is not a "(", assumed to be single digit denominator
+							If expr(sub(Str3,C+1,1))=0 //check if single digit denominator is 0
+							Then
+								1→Z //set flag for divide by 0 to true
+								length(Str3)→C move C to end of Str3 to end while loop
+							End
+						End
+					C+1→C //incriment index of C to not include division sign
+					End
+					If Z=1 //checks if divide by 0 error
+					Then
+						0→[A](I,J //sets undefined in matrices
+						1→[B](I,J
+					Else
+						expr(Str3)→[A](I,J //otherwise evaluates and inserts into [A]
+					End
+					0→Z	//reset divide by 0 flag
+				End
+			End
+		End
+	End
+End
